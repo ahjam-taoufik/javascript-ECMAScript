@@ -11,17 +11,13 @@
 
  //methode2 =================================
 
-  const num=12;
-
- const nums=[1,45,8,4]
-
  function func(name){
      return `salam alikoum ${name}`
  }
 
- export{
-     num,nums,func
- }
+ const num = 12
+
+ module.exports={num,func}
 
 
 
