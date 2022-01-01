@@ -1,32 +1,23 @@
-
-// Example One
-
-let i = 10;
-let j = 20;
-console.log(i + j);
-
-function first() {
-  console.log("Hello First");
+fetch("https://api.github.com/users/ahjam-taoufik/repos")
+.then(result=>{
+    let results=result.json()
+      console.log(results)
+      return results
+})
+.then(results=>{
+    console.log(results[10].name)
+    return results
 }
-
-function second() {
-  first();
-  console.log("Hello Second");
+)
+.then(res=>{
+    console.log(res.length)
+    return res
 }
-
-second();
-
-// Example Two
-
-window.setTimeout(() => console.log("Last"), 1000);
-console.log("One");
-window.setTimeout(() => console.log("Two"), 0);
-console.log("Three");
-
-// Example Three
-
-window.setTimeout(() => console.log(myVariable), 0);
-
-let myVariable = 100;
-
-myVariable += 200;
+)
+.then(res=>{
+    for (let i = 0; i < res.length; i++) {
+         console.log(res[i].name);
+        
+    }
+}
+)
